@@ -77,9 +77,11 @@ public class MovieQuoteAdapter extends RecyclerView.Adapter<MovieQuoteAdapter.Mo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    DocumentSnapshot ds = mMovieQuotesSnapshots.get(getAdapterPosition());
+
                     Context c = view.getContext();
                     Intent intent = new Intent(c, MovieQuoteDetailActivity.class);
-
+                    intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());
                     c.startActivity(intent);
                 }
             });
