@@ -34,24 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Temp Firebase tresting are
         // TODO: Comment out
-        final FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-
-        db.collection("moviequotes")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-                });
+//        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+//        db.collection("moviequotes")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                Log.d(TAG, document.getId() + " => " + document.getData());
+//                            }
+//                        } else {
+//                            Log.w(TAG, "Error getting documents.", task.getException());
+//                        }
+//                    }
+//                });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,14 +56,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Added a Firestore document", Snackbar.LENGTH_LONG).show();
                 // Create a new mq with a first and last name
-                Map<String, Object> mq = new HashMap<>();
-                mTempCounter = mTempCounter + 1;
-                mq.put("quote", "Quote #" + mTempCounter);
-                mq.put("movie", "Movie # " + mTempCounter);
-
-
-                // Add a new document with a generated ID
-                db.collection("moviequotes").add(mq);
+//                Map<String, Object> mq = new HashMap<>();
+//                mTempCounter = mTempCounter + 1;
+//                mq.put("quote", "Quote #" + mTempCounter);
+//                mq.put("movie", "Movie # " + mTempCounter);
+//                db.collection("moviequotes").add(mq);
             }
         });
     }
