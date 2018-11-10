@@ -79,7 +79,7 @@ public class MovieQuoteDetailActivity extends AppCompatActivity {
         final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
 
         quoteEditText.setText((String)mDocSnapshot.get(Constants.KEY_QUOTE));
-        quoteEditText.setText((String)mDocSnapshot.get(Constants.KEY_MOVIE));
+        movieEditText.setText((String)mDocSnapshot.get(Constants.KEY_MOVIE));
 
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
